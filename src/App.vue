@@ -1,10 +1,27 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <input v-model="name" type="text" />
+    {{ name }}
+    <hr />
+    <button @click="incrementCounter">Add To increment</button>
+    {{ counter }}
   </div>
-  <router-view/>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      name: "sofien",
+      counter: 0,
+    };
+  },
+  methods: {
+    incrementCounter() {
+      this.counter++;
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
